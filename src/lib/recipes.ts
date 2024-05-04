@@ -7,6 +7,7 @@ export interface RecipeIngredient {
 export interface Recipe {
   ingredients: RecipeIngredient[]
   name: string
+  image:string
 }
 export const recipes: Recipe[] = [
   {
@@ -15,7 +16,8 @@ export const recipes: Recipe[] = [
       { amount: 3,  ingredient: Ingredient.CHICKEN },
       { amount: 3,  ingredient: Ingredient.TOMATO }
     ],
-    name: 'Arroz con pollo'
+    name: 'Arroz con pollo',
+    image: '/imagenes de recetas/arroz con pollo.jpg'
   },
   {
     ingredients: [
@@ -25,7 +27,8 @@ export const recipes: Recipe[] = [
       {amount:2,  ingredient:Ingredient.CHEESE},
       {amount:1,  ingredient:Ingredient.LEMON},
     ],
-    name: 'Ensalada de papa y pollo'
+    name: 'Ensalada de papa y pollo',
+    image: '/imagenes de recetas/ensalada-de-papa-y-pollo.jpg'
   },
   {
     ingredients: [
@@ -35,7 +38,8 @@ export const recipes: Recipe[] = [
       {amount:2,  ingredient:Ingredient.CHEESE},
       {amount:1,  ingredient:Ingredient.LEMON},
     ],
-    name: 'Arroz con carne y verduras'
+    name: 'Arroz con carne y verduras',
+    image: '/imagenes de recetas/arroz con carne y verduras.jpg'
   },
   {
     ingredients: [
@@ -44,7 +48,8 @@ export const recipes: Recipe[] = [
       { amount: 1,  ingredient: Ingredient.KETCHUP},
       {amount:2,  ingredient:Ingredient.LEMON},
     ],
-    name: 'Tortilla de papa con ensalada de lechuga'
+    name: 'Tortilla de papa con ensalada de lechuga',
+    image: '/imagenes de recetas/tortilla de papa con ensalada de lechuga.jpg'
   },
   {
     ingredients: [
@@ -54,7 +59,8 @@ export const recipes: Recipe[] = [
       { amount: 4,  ingredient: Ingredient.CHEESE},
       {amount:2,  ingredient:Ingredient.LEMON},
     ],
-    name: 'Pollo a la plancha con salsa de limón y queso'
+    name: 'Pollo a la plancha con salsa de limón y queso',
+    image: '/imagenes de recetas/pollo_en_salsa_de_limon.jpg'
   },
   {
     ingredients: [
@@ -64,7 +70,8 @@ export const recipes: Recipe[] = [
       { amount: 5,  ingredient: Ingredient.TOMATO},
       {amount:5,  ingredient:Ingredient.ONION},
     ],
-    name: 'carne con tomate y cebolla salteada'
+    name: 'carne con tomate y cebolla salteada',
+    image: '/imagenes de recetas/lomo-saltado-peruvian-beef-stir-fry-and-potatoes.jpg'
   }
 
 ]

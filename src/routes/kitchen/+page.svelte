@@ -1,29 +1,39 @@
-<!-- kitchen/+page.svelte -->
-
 <script lang="ts">
-  // Importa el componente Recipecard
   import RecipeCard from '../../components/RecipeCard.svelte'
-
-  // Importa los datos de las recetas (recipes)
-  import { recipes, type Recipe } from '$lib/recipes';
-
-  // Utiliza el método map para convertir recipes en recipeIngredients
-  export let recipeIngredients = recipes.map((recipe: Recipe) => {
-    // Mapea cada ingrediente de la receta para crear un nuevo objeto RecipeIngredient
-    let ingredients = recipe.ingredients.map(recipeIngredient => ({
-      amount: recipeIngredient.amount,
-      ingredient: recipeIngredient.ingredient
-    }));
-
-    // Devuelve un nuevo objeto RecipeIngredient con los datos de la receta
-    return {
-      ingredients: ingredients,
-      name: recipe.name
-    };
-  });
+  import { recipes } from '$lib/recipes';
 </script>
 
-<div>
-  <!-- Renderiza el componente Recipecard y pasa los datos de las recetas -->
-  <RecipeCard {recipeIngredients} />
+<style>
+  .scrollable-content {
+    height: 500px; 
+    overflow-y: auto;
+  }
+  .recipe-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .recipe-name {
+    margin-right: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  .recipe-image {
+    width: 100px; 
+    height: auto;
+    color: white;
+  }
+</style>
+
+<div class="scrollable-content">
+  {#each recipes as recipe (recipe.name)}
+    <div class="recipe-container">
+      <div class="recipe-name">{recipe.name}</div>
+      <img src={recipe.image} alt={recipe.name} class="recipe-image" /> 
+      <RecipeCard recipeIngredients={recipe.ingredients} />
+    </div>
+  {/each}
 </div>
+
+
